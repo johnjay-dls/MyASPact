@@ -1,0 +1,17 @@
+﻿@page
+@model MyFirstProject.Pages.Forms.RegistrationModel
+@{
+    ViewData["Title"] = "Registration";
+}
+<form method="post">
+    <div asp-validation-summary="All" style="color:red"></div>
+    <input asp-for="Person.Name" placeholder="Name" />
+    <input asp-for="Person.Lastname" placeholder="Lastname" />
+    <input asp-for="Person.Email" placeholder="Email" />
+    <input asp-for="Person.Age" placeholder="Age" />
+    <input asp-for="Person.Contactnumber" placeholder="Contactnumber" />
+    <input asp-for="Person.Password" placeholder="Password" />
+    <input asp-for="Person.Confirmpassword" placeholder="Confirmpassword" />
+    <button type="submit">Submit</button>
+</form>
+
