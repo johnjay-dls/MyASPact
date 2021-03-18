@@ -11,15 +11,22 @@ namespace MyFirstProject.Pages.Forms
 {
     public class RegistrationModel : PageModel
     {
+        public RegistrationModel(RegistrationDBContext registercontext)
+        {
+            _registrationdbcontext = registercontext;
+        }
+        // create property for DBContext instance
+        private readonly RegistrationDBContext _registrationdbcontext;
+
         [BindProperty]
-       public PersonModel Person { get; set; }
+        public PersonModel Person { get; set; }
 
-
+        public List<PersonModel> Persons = new List<PersonModel>();
 
         //GET handlers
-        public void OnGet(string Name, string Lastname, string Age, string Email, string Contactnumber, string Password, string Confirmpassword)
+        public void OnGet()
         {
-            //HttpResponseWritingExtensions.WriteAsync(this.Response, "Hi!" + name + ". Your lastname is " + lastname + "");
+            Persons = _registrationdbcontext.Persons.ToList();
         }
 
         //POST handler
@@ -28,20 +35,15 @@ namespace MyFirstProject.Pages.Forms
         {
             if (!ModelState.IsValid)
             {
+                Persons = _registrationdbcontext.Persons.ToList();
                 return Page();
             }
+            _registrationdbcontext.Persons.Add(Person);
+            _registrationdbcontext.SaveChanges();
             return Redirect("/Index");
+        }
 
-
-            //string name = Request.Form["txtname"];
-            //string lastname = Request.Form["textlastname"];
-            //string email = Request.Form["textemail"];
-            //string age = Request.Form["textage"];
-            //string contactno = Request.Form["textcontactno"];
-            //string password = Request.Form["textpassword"];
-            //string confirmpassword = Request.Form["textconfirmpassword"];
-            //HttpResponseWritingExtensions.WriteAsync(this.Response,"Hi!" + Person.Name+". Your lastname is "+ Person.Lastname+"");
-
+         
         }
     }
-}
+

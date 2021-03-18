@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\acer\\source\\repos\\MyFirstProject\\MyFirstProject.csproj": {}
+    "C:\\Users\\acer\\Source\\Repos\\MyASPact\\MyFirstProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\acer\\source\\repos\\MyFirstProject\\MyFirstProject.csproj": {
+    "C:\\Users\\acer\\Source\\Repos\\MyASPact\\MyFirstProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\source\\repos\\MyFirstProject\\MyFirstProject.csproj",
+        "projectUniqueName": "C:\\Users\\acer\\Source\\Repos\\MyASPact\\MyFirstProject.csproj",
         "projectName": "MyFirstProject",
-        "projectPath": "C:\\Users\\acer\\source\\repos\\MyFirstProject\\MyFirstProject.csproj",
+        "projectPath": "C:\\Users\\acer\\Source\\Repos\\MyASPact\\MyFirstProject.csproj",
         "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\source\\repos\\MyFirstProject\\obj\\",
+        "outputPath": "C:\\Users\\acer\\Source\\Repos\\MyASPact\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,22 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
