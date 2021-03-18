@@ -8,17 +8,20 @@ namespace MyFirstProject.Models
 {
     public class PersonModel
     {
+        [Key]
+        public int PersonId { get; set; }
+
         [Required]
         [StringLength(20)]
         public string Name { get; set; }
         [Required]
-        [StringLength(20)]
+        [StringLength(200)]
         public string Lastname { get; set; }
         [Required]
         [Range(18, 60)]
         public int Age { get; set; }
         [Required]
-        [StringLength(20)]
+        [StringLength(200)]
         public string Email { get; set; }
         [Required]
         
